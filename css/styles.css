@@ -1,0 +1,81 @@
+html {
+    scroll-behavior: smooth;
+}
+
+a, button, .hoverable {
+    transition: all 0.2s ease-in-out;
+}
+
+.main-title {
+    position: relative;
+}
+
+[x-cloak] {
+    display: none !important;
+}
+
+.main-about-block {
+    box-shadow: 10px 10px 8px 0px rgba(34, 60, 80, 0.2);
+}
+
+.main-title::before {
+    content: "";
+    width: 500%;
+    height: 10px;
+    position: absolute;
+    z-index: -1;
+    background: #FF0C16;
+    bottom: -18px;
+    transform: skew(-10deg);
+    left: 0;
+}
+
+@media (max-width: 1280px) {
+    .main-title::before {
+        width: 100%;
+    }
+}
+
+@media (max-width: 850px) {
+    .main-title::before {
+        display: none;
+    }
+}
+
+.nav-content-angle {
+    transform: skew(-26deg) translateX(-2%);
+}
+
+.skew-main-mask {
+  clip-path: polygon(25% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+@keyframes main-pan {
+    0% {
+        transform: translateX(0%);
+    }
+    50% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+@keyframes main-mobile-pan {
+    0% {
+        transform: translateY(0%);
+    }
+    50% {
+        transform: translateY(-50%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+.animate-main-pan {
+    animation: main-pan 20s ease-in-out infinite;
+}
+
+.animate-main-mobile-pan {
+    animation: main-mobile-pan 20s ease-in-out infinite;
+}

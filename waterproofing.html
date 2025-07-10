@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>МКС – Гидроизоляция</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="/assets/favicon.ico">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              red: {
+                500: '#FF0C16'
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body class="text-gray-900 bg-white font-sans">
+
+<header class="bg-black fixed top-0 left-0 w-full z-50 backdrop-blur shadow" id="header">
+    <div class="relative px-4">
+        <div class="max-w-6xl flex justify-between flex-wrap flex-col items-start md:mx-auto md:items-center md:flex-row">
+            <div class="px-2 pt-3 pb-5 h-auto w-[200px] min-[400px]:px-4 min-[400px]:w-[300px] min-[500px]:px-5 md:py-2">
+                <a href="index.html" class="cursor-pointer block"><img src="/assets/images/logo.jpeg" alt="MKS Logo" class="block w-full h-auto" /></a>
+            </div>
+            <nav class="flex text-white text-xs flex-auto min-[400px]:text-sm min-[500px]:text-base md:flex-row md:flex-none" x-data="{ open: null }"  x-init="
+    setTimeout(() => {
+        const dummy = document.createElement('div');
+        dummy.style.position = 'absolute';
+        dummy.style.top = '-1000px';
+        dummy.style.left = '-1000px';
+        document.body.appendChild(dummy);
+        dummy.focus();
+        setTimeout(() => dummy.remove(), 100);
+    }, 0);
+">
+                <a href="index.html" class="skew-x-[-22deg] cursor-pointer px-2 py-3 min-[400px]:px-4 min-[500px]:px-5 md:py-8 hover:bg-red-500 hover:text-white">
+                    <div class="skew-x-[22deg]">Главная</div></a>
+                <div
+                        @mouseenter="open = 'lnk'"
+                        @mouseleave="open = null"
+                        class="flex">
+                    <a
+                            href="lnk.html"
+                            :class="{ 'text-white': open === 'lnk', 'bg-red-500': open === 'lnk'  }"
+                            class="skew-x-[-22deg] px-2 py-3 min-[400px]:px-4 min-[500px]:px-5 md:py-8 hover:bg-red-500 hover:text-white">
+                        <div class="skew-x-[22deg]">ЛНК</div>
+                    </a>
+                    <div
+                            x-show="open === 'lnk'"
+                            x-cloak
+                            :class="{
+                            '-translate-y-full': open !== 'lnk',
+                          }"
+                            x-transition:enter="transition ease-out pointer-events-none duration-500"
+                            x-transition:enter-start="-translate-y-full opacity-0"
+                            x-transition:enter-end="translate-y-0 opacity-100"
+                            x-transition:leave="transition ease-in pointer-events-none duration-200"
+                            x-transition:leave-start="translate-y-0 opacity-100"
+                            x-transition:leave-end="translate-y-full opacity-0"
+                            class="absolute left-0 text-white w-full translate-y-0 top-full"
+                    >
+                        <div class="relative flex">
+                            <div class="bg-red-500 w-full xl:w-[90%] px-4 xl:pl-16 relative z-[3]">
+                                <div class="max-w-6xl xl:max-w-5xl mx-auto py-6 min-[400px]:px-5 xl:px-2">
+                                    <h2 class="text-2xl font-bold mb-4"><div class="skew-[22deg]">ЛНК</div></h2>
+                                    <p class="leading-relaxed">Визуальный и измерительный контроль<br/>
+
+                                        Ультразвуковой контроль: Ультразвуковая дефектоскопия, Ультразвуковая толщинометрия<br/>
+
+                                        Радиационный контроль: Рентгенографический</p>
+                                </div>
+                            </div>
+                            <div class="hidden xl:block bg-red-500 overflow-hidden right-[0] absolute w-full h-full z-[2] pr-6 py-6 nav-content-angle"></div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                        @mouseenter="open = 'waterproofing'"
+                        @mouseleave="open = null"
+                        class="flex">
+                    <a
+                            href="waterproofing.html"
+                            class="skew-x-[-22deg] px-2 py-3 min-[400px]:px-4 min-[500px]:px-5 md:py-8 bg-red-500 text-white">
+                        <div class="skew-x-[22deg]">Гидроизоляция</div></a>
+                </div>
+                <div
+                        @mouseenter="open = 'contacts'"
+                        @mouseleave="open = null"
+                        class="flex">
+                    <a
+                            href="contacts.html"
+                            :class="{ 'text-white': open === 'contacts', 'bg-red-500': open === 'contacts'  }"
+                            class="skew-x-[-22deg] px-2 py-3 min-[400px]:px-4 min-[500px]:px-5 md:py-8 hover:bg-red-500 hover:text-white">
+                        <div class="skew-x-[22deg]">Контакты</div></a>
+                    <div
+                            x-show="open === 'contacts'"
+                            x-cloak
+                            :class="{
+                            '-translate-y-full': open !== 'contacts',
+                          }"
+                            x-transition:enter="transition ease-out pointer-events-none duration-500"
+                            x-transition:enter-start="-translate-y-full opacity-0"
+                            x-transition:enter-end="translate-y-0 opacity-100"
+                            x-transition:leave="transition ease-in pointer-events-none duration-200"
+                            x-transition:leave-start="translate-y-0 opacity-100"
+                            x-transition:leave-end="translate-y-full opacity-0"
+                            class="absolute left-0 text-white w-full translate-y-0 top-full"
+                    >
+                        <div class="relative flex">
+                            <div class="bg-red-500 w-full xl:w-[90%] px-4 xl:pl-16 relative z-[3]">
+                                <div class="max-w-6xl xl:max-w-5xl mx-auto py-6 min-[400px]:px-5 xl:px-2">
+                                    <h2 class="text-2xl font-bold mb-4">Контакты</h2>
+                                    <p class="leading-relaxed">
+                                    <div class="flex items-center mb-2"><div class="w-[20px] h-[20px] inline-block mr-1 mb-[-8px]"><?xml version="1.0" encoding="utf-8"?><svg version="1.1" id="Layer_1" fill="#fff" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 122.88 78.607" enable-background="new 0 0 122.88 78.607" xml:space="preserve"><g><path fill-rule="evenodd" clip-rule="evenodd" d="M61.058,65.992l24.224-24.221l36.837,36.836H73.673h-25.23H0l36.836-36.836 L61.058,65.992L61.058,65.992z M1.401,0l59.656,59.654L120.714,0H1.401L1.401,0z M0,69.673l31.625-31.628L0,6.42V69.673L0,69.673z M122.88,72.698L88.227,38.045L122.88,3.393V72.698L122.88,72.698z"/></g></svg></div>E-mail: magistralkontrolservis@mail.ru</div>
+                                    <div class="flex items-center"><div class="w-[15px] h-[15px] inline-block mr-1"><svg fill="#ffffff" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.256 12.253c-.096-.667-.611-1.187-1.274-1.342-2.577-.604-3.223-2.088-3.332-3.734C12.193 7.092 11.38 7 10 7s-2.193.092-2.65.177c-.109 1.646-.755 3.13-3.332 3.734-.663.156-1.178.675-1.274 1.342l-.497 3.442C2.072 16.907 2.962 18 4.2 18h11.6c1.237 0 2.128-1.093 1.953-2.305l-.497-3.442zM10 15.492c-1.395 0-2.526-1.12-2.526-2.5s1.131-2.5 2.526-2.5 2.526 1.12 2.526 2.5-1.132 2.5-2.526 2.5zM19.95 6c-.024-1.5-3.842-3.999-9.95-4C3.891 2.001.073 4.5.05 6s.021 3.452 2.535 3.127c2.941-.381 2.76-1.408 2.76-2.876C5.345 5.227 7.737 4.98 10 4.98s4.654.247 4.655 1.271c0 1.468-.181 2.495 2.76 2.876C19.928 9.452 19.973 7.5 19.95 6z"/></svg></div>Тел.: +7 927 784 58 38 - Директор Ряхов А. А.</div>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="hidden xl:block bg-red-500 overflow-hidden right-[0] absolute w-full h-full z-[2] pr-6 py-6 nav-content-angle"></div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<div id="header-spacer"></div>
+
+<section class="px-4 py-16 bg-gray-50" data-aos="fade-up">
+    <div class="max-w-3xl mx-auto">
+        <h3 data-aos="fade-right" class="text-2xl font-semibold mb-6">Гидроизоляция</h3>
+        <div data-aos="fade-right">
+            <h4 class="text-xl font-semibold mb-3">Использование пропиленовой ламинированной ткани для шламовых амбаров</h4>
+            <p>Пропиленовая ламинированная ткань (ПЛТ) — универсальный и надежный материал, активно применяемый в строительстве и промышленной сфере. Одним из наиболее перспективных направлений её использования являются шламовые амбары, предназначенные для хранения и переработки технологических жидкостей и осадочных веществ предприятий нефтегазодобывающей промышленности, металлургии, химической отрасли и прочих производств.</p><br>
+        </div>
+        <div data-aos="fade-right">
+            <h4 class="text-xl font-semibold mb-3">Преимущества пропиленовой ламинированной ткани в шламовых амбарах:</h4>
+            <ul class="mb-4">
+                <li class="mb-4">
+                    <h5 class="font-semibold mb-1">1. Химическая устойчивость:</h5>
+                    <p class="ml-4">Ламинат эффективно противостоит агрессивным средам, включая кислоты, соли и нефтепродукты, сохраняя целостность покрытия и обеспечивая надежную защиту дна и стенок амбара.</p>
+                </li>
+                <li class="mb-4">
+                    <h5 class="font-semibold mb-1">2. Высокая механическая прочность:</h5>
+                    <p class="ml-4">Материал выдерживает значительные нагрузки, минимизируя риски разрывов и повреждений, возникающих вследствие давления содержимого амбара.</p>
+                </li>
+                <li class="mb-4">
+                    <h5 class="font-semibold mb-1">3. Герметичность:</h5>
+                    <p class="ml-4">Водонепроницаемые свойства ткани позволяют надежно изолировать хранилище от внешних воздействий и предотвратить загрязнение окружающих территорий.</p>
+                </li>
+                <li class="mb-4">
+                    <h5 class="font-semibold mb-1">4. Простота монтажа:</h5>
+                    <p class="ml-4">Легкая укладка, удобство сварки швов и возможность быстрого восстановления поврежденных участков делают работу с тканью удобной и экономичной.</p>
+                </li>
+                <li class="mb-4">
+                    <h5 class="font-semibold mb-1">5. Срок службы:</h5>
+                    <p class="ml-4">Служба ткани исчисляется десятилетиями, что сокращает расходы на обслуживание и замену покрытий.</p>
+                </li>
+                <li class="mb-4">
+                    <h5 class="font-semibold mb-1">6. Экологическая безопасность:</h5>
+                    <p class="ml-4">Отходы производства и использованная ткань подлежат вторичной переработке, снижая негативное влияние на окружающую среду.</p>
+                </li>
+            </ul>
+        </div>
+        <p data-aos="fade-right">Использование пропиленовой ламинированной ткани существенно упрощает строительство и эксплуатацию шламовых амбаров, позволяя минимизировать издержки и поддерживать высокий уровень экологической безопасности.</p><br>
+        <p data-aos="fade-right">Одним из наиболее эффективных материалов для защиты дна и стенок шламового амбара является полимерная водоизоляционная мембрана (ПВД).</p><br>
+        <div data-aos="fade-right">
+            <h4 class="text-xl font-semibold mb-3">Основные характеристики ПВД</h4>
+            <p><b>Материал:</b> Полимерная пленка изготавливается преимущественно из полиэтилена высокой плотности (HDPE), обладающего высокими прочностными характеристиками, устойчивостью к химическим воздействиям и ультрафиолетовым лучам.</p><br>
+            <p><b>Толщина мембраны:</b> Обычно толщина составляет от 1,5 мм до 2 мм, обеспечивая необходимую прочность и долговечность покрытия.</p><br>
+            <p><b>Устойчивость к нагрузкам:</b> Мембрана способна выдерживать механические нагрузки, вызванные давлением жидкости и частиц осадка, сохраняя целостность конструкции.</p><br>
+            <p><b>Экологичность:</b> Использование высококачественных полимеров позволяет минимизировать воздействие на окружающую среду даже при длительном хранении опасных веществ.</p><br>
+        </div>
+        <div data-aos="fade-right">
+            <h4 class="text-xl font-semibold mb-3">Применение ПВД в строительстве шламовых амбаров</h4>
+            <p>При сооружении шламовых амбаров важным этапом является укладка и закрепление полимерной мембраны. Этот процесс включает следующие этапы:</p><br>
+            <ul class="mb-4">
+                <li class="mb-4">
+                    <h5 class="font-semibold mb-1">1. Подготовка основания:</h5>
+                    <p class="ml-4">Перед укладкой поверхность должна быть очищена от мусора, острых предметов и выровнена.</p>
+                </li>
+                <li class="mb-4">
+                    <h5 class="font-semibold mb-1">2. Укладка полотна:</h5>
+                    <p class="ml-4">Пленка аккуратно расстилается поверх подготовленного основания, исключая складки и перегибы.</p>
+                </li>
+                <li class="mb-4">
+                    <h5 class="font-semibold mb-1">3. Крепление краев:</h5>
+                    <p class="ml-4">Края мембраны надежно фиксируются специальными анкерами или засыпаются грунтом для предотвращения смещения.</p>
+                </li>
+                <li class="mb-4">
+                    <h5 class="font-semibold mb-1">4. Герметизация швов:</h5>
+                    <p class="ml-4">Соединение отдельных полотен осуществляется путем сварки горячим воздухом, обеспечивающей высокую герметичность соединения.</p>
+                </li>
+            </ul>
+        </div>
+        <p data-aos="fade-right">Таким образом, использование полимерной водоизоляционной мембраны значительно повышает надежность и безопасность эксплуатации шламовых амбаров, защищая грунт и подземные воды от загрязнений.</p>
+    </div>
+</section>
+
+<footer class="bg-gray-100 p-4 text-center">
+    <p class="text-sm text-gray-600">© 2025 ООО «МагистральКонтрольСервис»</p>
+</footer>
+
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>МКС – Контакты</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="/assets/favicon.ico">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              red: {
+                500: '#FF0C16'
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body class="text-gray-900 bg-white font-sans">
+
+<header class="bg-black fixed top-0 left-0 w-full z-50 backdrop-blur shadow" id="header">
+    <div class="relative px-4">
+        <div class="max-w-6xl flex justify-between flex-wrap flex-col items-start md:mx-auto md:items-center md:flex-row">
+            <div class="px-2 pt-3 pb-5 h-auto w-[200px] min-[400px]:px-4 min-[400px]:w-[300px] min-[500px]:px-5 md:py-2">
+                <a href="index.html" class="cursor-pointer block"><img src="/assets/images/logo.jpeg" alt="MKS Logo" class="block w-full h-auto" /></a>
+            </div>
+            <nav class="flex text-white text-xs flex-auto min-[400px]:text-sm min-[500px]:text-base md:flex-row md:flex-none" x-data="{ open: null }"  x-init="
+    setTimeout(() => {
+        const dummy = document.createElement('div');
+        dummy.style.position = 'absolute';
+        dummy.style.top = '-1000px';
+        dummy.style.left = '-1000px';
+        document.body.appendChild(dummy);
+        dummy.focus();
+        setTimeout(() => dummy.remove(), 100);
+    }, 0);
+">
+                <a href="index.html" class="skew-x-[-22deg] cursor-pointer px-2 py-3 min-[400px]:px-4 min-[500px]:px-5 md:py-8 hover:bg-red-500 hover:text-white">
+                    <div class="skew-x-[22deg]">Главная</div></a>
+                <div
+                        @mouseenter="open = 'lnk'"
+                        @mouseleave="open = null"
+                        class="flex">
+                    <a
+                            href="lnk.html"
+                            :class="{ 'text-white': open === 'lnk', 'bg-red-500': open === 'lnk'  }"
+                            class="skew-x-[-22deg] px-2 py-3 min-[400px]:px-4 min-[500px]:px-5 md:py-8 hover:bg-red-500 hover:text-white">
+                        <div class="skew-x-[22deg]">ЛНК</div>
+                    </a>
+                    <div
+                            x-show="open === 'lnk'"
+                            x-cloak
+                            :class="{
+                            '-translate-y-full': open !== 'lnk',
+                          }"
+                            x-transition:enter="transition ease-out pointer-events-none duration-500"
+                            x-transition:enter-start="-translate-y-full opacity-0"
+                            x-transition:enter-end="translate-y-0 opacity-100"
+                            x-transition:leave="transition ease-in pointer-events-none duration-200"
+                            x-transition:leave-start="translate-y-0 opacity-100"
+                            x-transition:leave-end="translate-y-full opacity-0"
+                            class="absolute left-0 text-white w-full translate-y-0 top-full"
+                    >
+                        <div class="relative flex">
+                            <div class="bg-red-500 w-full xl:w-[90%] px-4 xl:pl-16 relative z-[3]">
+                                <div class="max-w-6xl xl:max-w-5xl mx-auto py-6 min-[400px]:px-5 xl:px-2">
+                                    <h2 class="text-2xl font-bold mb-4"><div class="skew-[22deg]">ЛНК</div></h2>
+                                    <p class="leading-relaxed">Визуальный и измерительный контроль<br/>
+
+                                        Ультразвуковой контроль: Ультразвуковая дефектоскопия, Ультразвуковая толщинометрия<br/>
+
+                                        Радиационный контроль: Рентгенографический</p>
+                                </div>
+                            </div>
+                            <div class="hidden xl:block bg-red-500 overflow-hidden right-[0] absolute w-full h-full z-[2] pr-6 py-6 nav-content-angle"></div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                        @mouseenter="open = 'waterproofing'"
+                        @mouseleave="open = null"
+                        class="flex">
+                    <a
+                            href="waterproofing.html"
+                            :class="{ 'text-white': open === 'waterproofing', 'bg-red-500': open === 'waterproofing'  }"
+                            class="skew-x-[-22deg] px-2 py-3 min-[400px]:px-4 min-[500px]:px-5 md:py-8 hover:bg-red-500 hover:text-white">
+                        <div class="skew-x-[22deg]">Гидроизоляция</div></a>
+                    <div
+                            x-show="open === 'waterproofing'"
+                            x-cloak
+                            :class="{
+                            '-translate-y-full': open !== 'waterproofing',
+                          }"
+                            x-transition:enter="transition ease-out pointer-events-none duration-500"
+                            x-transition:enter-start="-translate-y-full opacity-0"
+                            x-transition:enter-end="translate-y-0 opacity-100"
+                            x-transition:leave="transition ease-in pointer-events-none duration-200"
+                            x-transition:leave-start="translate-y-0 opacity-100"
+                            x-transition:leave-end="translate-y-full opacity-0"
+                            class="absolute left-0 text-white w-full translate-y-0 top-full"
+                    >
+                        <div class="relative flex">
+                            <div class="bg-red-500 w-full xl:w-[90%] px-4 xl:pl-16 relative z-[3]">
+                                <div class="max-w-6xl xl:max-w-5xl mx-auto py-6 min-[400px]:px-5 xl:px-2">
+                                    <h2 class="text-2xl font-bold mb-4">Гидроизоляция</h2>
+                                    <p class="leading-relaxed">Пропиленовая ламинированная ткань (ПЛТ)<br/>
+                                        Полиэтилен высокого давления (ПВД)<br>Полиэтилен низкого давления (ПНД)</p>
+                                </div>
+                            </div>
+                            <div class="hidden xl:block bg-red-500 overflow-hidden right-[0] absolute w-full h-full z-[2] pr-6 py-6 nav-content-angle"></div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                        @mouseenter="open = 'contacts'"
+                        @mouseleave="open = null"
+                        class="flex">
+                    <a
+                            href="contacts.html"
+                            class="skew-x-[-22deg] px-2 py-3 min-[400px]:px-4 min-[500px]:px-5 md:py-8 bg-red-500 text-white">
+                        <div class="skew-x-[22deg]">Контакты</div></a>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<div id="header-spacer"></div>
+
+<footer class="bg-gray-100 p-4 text-center">
+    <p class="text-sm text-gray-600">© 2025 ООО «МагистральКонтрольСервис»</p>
+</footer>
+
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="/js/main.js"></script>
+</body>
+</html>
