@@ -1,0 +1,8 @@
+.idea/
+.vscode/
+.env
+/vendor/
+composer.lock
+*.log
+.cache/
+node_modules/
