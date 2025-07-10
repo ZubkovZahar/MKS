@@ -6,3 +6,6 @@ composer.lock
 *.log
 .cache/
 node_modules/
+send.php
+composer.json
+vendor/
