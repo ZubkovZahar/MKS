@@ -11,7 +11,7 @@ body {
     justify-content: space-between;
 }
 
-body * {
+body>* {
     flex: 0 0 auto;
 }
 
