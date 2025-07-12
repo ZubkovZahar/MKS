@@ -4,37 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>МКС – ЛНК</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preload" as="font" href="assets/fonts/Montserrat-VariableFont_wght.woff2" type="font/woff2" crossorigin="anonymous">
+    <script src="js/tailwind.min.js"></script>
     <link rel="icon" href="assets/favicon.ico">
     <script>
       tailwind.config = {
         theme: {
           extend: {
+            fontFamily: {
+              sans: ['Montserrat', 'sans-serif']
+            },
             colors: {
               red: {
-                500: '#FF0C16'
+                500: '#E61B1F'
               }
             }
           }
         }
       }
     </script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link href="css/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/styles.css" />
 </head>
-<body class="text-gray-900 bg-white">
+<body class="text-gray-900 bg-white font-sans">
 
 <header class="bg-black fixed top-0 left-0 w-full z-50 backdrop-blur shadow" id="header">
     <div class="relative px-4">
         <div class="max-w-6xl flex justify-between flex-wrap flex-col items-start md:mx-auto md:items-center md:flex-row">
             <div class="pt-3 pb-5 h-auto w-[200px] min-[400px]:w-[300px] min-[500px]:px-5 md:py-2">
-                <a href="index.html" class="cursor-pointer block"><img src="assets/images/logo.jpeg" alt="MKS Logo" class="block w-full h-auto" /></a>
+                <a href="index.html" class="cursor-pointer block"><img src="assets/images/logo.webp" alt="MKS Logo" class="block w-full h-auto" /></a>
             </div>
             <nav class="flex text-xs text-white flex-auto min-[400px]:text-sm min-[500px]:text-base md:text-sm min-[500px]:ml-5 md:ml-0 md:flex-row md:flex-none" x-data="{ open: null }">
-                <a href="index.html" class="md:skew-x-[-22deg] cursor-pointer px-2 py-3 min-[400px]:px-4 min-[500px]:px-5 md:py-8 hover:bg-red-500 hover:text-white"">
+                <a href="index.html" class="md:skew-x-[-22deg] cursor-pointer px-2 py-3 min-[400px]:px-4 min-[500px]:px-5 md:py-8 hover:bg-red-500 hover:text-white">
                 <div class="md:skew-x-[22deg]">Главная</div></a>
                 <div
                         @mouseenter="open = 'lnk'"
@@ -136,12 +137,12 @@
         <h3 data-aos="fade-right" class="text-2xl font-semibold mb-6">Лаборатория неразрушающего контроля</h3>
         <div data-aos="fade-right">
             <div class="float-right hidden min-[500px]:block w-40 md:w-[40%] ml-6 mb-2">
-                <img src="assets/images/lnk1.jpg" alt="Лаборатория неразрушающего контроля" class="rounded shadow-lg" />
+                <img src="assets/images/lnk1.webp" alt="Лаборатория неразрушающего контроля" class="rounded shadow-lg" />
             </div>
             <div>
                 <p>Лаборатория неразрушающего контроля (ЛНК) - это уникальное подразделение, выполняющее критически важную функцию в процессе обеспечения качества и безопасности. Специалисты ЛНК проводят комплексные испытания, направленные на обнаружение скрытых дефектов и их оценку, при этом целостность изделий сохраняется.</p><br>
                 <div class="block pb-6 min-[500px]:hidden">
-                    <img src="assets/images/lnk1.jpg" alt="Лаборатория неразрушающего контроля" class="rounded shadow-lg" />
+                    <img src="assets/images/lnk1.webp" alt="Лаборатория неразрушающего контроля" class="rounded shadow-lg" />
                 </div>
                 <p>Лаборатория использует инновационные методы, которые позволяют получить точную информацию о состоянии изделия, не нанося ей вреда. Это особенно актуально для отраслей, где безупречное качество и надежность являются приоритетными.</p><br>
                 <h4 class="text-xl font-semibold mb-3">Лаборатория неразрушающего контроля: гарантия качества и безопасности</h4>
@@ -155,10 +156,10 @@
         </div>
         <div data-aos="fade-right">
             <div class="block pb-6 min-[500px]:hidden">
-                <img src="assets/images/lnk2.jpg" alt="Лаборатория неразрушающего контроля" class="rounded shadow-lg" />
+                <img src="assets/images/lnk2.webp" alt="Лаборатория неразрушающего контроля" class="rounded shadow-lg" />
             </div>
             <div class="float-left hidden min-[500px]:block w-[40%] mr-6 mb-2">
-                <img src="assets/images/lnk2.jpg" alt="Лаборатория неразрушающего контроля" class="rounded shadow-lg" />
+                <img src="assets/images/lnk2.webp" alt="Лаборатория неразрушающего контроля" class="rounded shadow-lg" />
             </div>
             <h4 class="text-xl font-semibold mb-3">Методы контроля</h4>
             <ul class="mb-4">
@@ -185,7 +186,7 @@
         </div>
         <p data-aos="fade-right">
             <div class="block pb-6 min-[500px]:hidden">
-                <img src="assets/images/lnk3.jpg" alt="Лаборатория неразрушающего контроля" class="rounded shadow-lg" />
+                <img src="assets/images/lnk3.webp" alt="Лаборатория неразрушающего контроля" class="rounded shadow-lg" />
             </div>
             ---<br/>
             Эти три группы методов являются основными инструментами специалистов по контролю и диагностике, позволяя оперативно и достоверно получать необходимую информацию о качестве и состоянии объектов промышленного назначения. Правильный подбор и сочетание методов позволяют минимизировать риск отказов оборудования и повысить уровень безопасности производственных процессов.<br>
@@ -193,7 +194,7 @@
         <br/>
         <div data-aos="fade-right">
             <div class="float-right hidden min-[500px]:block w-[40%] ml-6 mb-2">
-                <img src="assets/images/lnk3.jpg" alt="Лаборатория неразрушающего контроля" class="rounded shadow-lg" />
+                <img src="assets/images/lnk3.webp" alt="Лаборатория неразрушающего контроля" class="rounded shadow-lg" />
             </div>
             <h4 class="text-xl font-semibold mb-3">Преимущества ЛНК</h4>
             <p>Использование методов неразрушающего контроля в Лаборатории неразрушающего контроля обеспечивает множество преимуществ:</p><br>
@@ -211,8 +212,8 @@
     <p class="text-sm text-gray-600">© 2025 ООО «МагистральКонтрольСервис»</p>
 </footer>
 
-<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script defer src="js/alpine.min.js"></script>
+<script src="js/aos.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
